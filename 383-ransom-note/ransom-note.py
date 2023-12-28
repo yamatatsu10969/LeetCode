@@ -6,9 +6,7 @@ class Solution:
         j = 0
         while i <= len(magArray) - 1:
             while j <= len(ranArray) - 1:
-                if not ranArray:
-                    return True
-                elif magArray[i] == ranArray[j]:
+                if magArray[i] == ranArray[j]:
                     del ranArray[j]
                     break
                 else:
