@@ -6,9 +6,10 @@ class Solution {
         stack.add(e);
       } else {
         if (stack.isEmpty) return false;
-        if ((e == ']' && stack.last == '[') ||
-            (e == ')' && stack.last == '(') ||
-            (e == '}' && stack.last == '{')) {
+        String last = stack.last;
+        if ((e == ']' && last == '[') ||
+            (e == ')' && last == '(') ||
+            (e == '}' && last == '{')) {
           stack.removeLast();
         } else {
           return false;
