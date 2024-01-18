@@ -3,7 +3,7 @@ class Solution {
     List<String> stack = [];
 
     for (final e in s.split('')) {
-      if (['(', '[', '{'].contains(e)) {
+      if (e == '(' || e == '[' || e == '{') {
         stack.add(e);
       } else {
         if (stack.isEmpty) return false;
