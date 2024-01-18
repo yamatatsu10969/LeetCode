@@ -1,7 +1,6 @@
 class Solution {
+  List<String> stack = [];
   bool isValid(String s) {
-    List<String> stack = [];
-
     for (final e in s.split('')) {
       if (e == '(' || e == '[' || e == '{') {
         stack.add(e);
