@@ -2,23 +2,18 @@ class Solution {
   bool isValid(String s) {
     List<String> stack = [];
 
-    for (int i = 0; i < s.length; i++) {
-      String c = s[i];
-      if (['(', '[', '{'].contains(c)) {
-        stack.add(c);
-      } else if (stack.isEmpty) {
-        return false;
-      } else if (c == ']') {
-        final l = stack.removeLast();
-        if (l != '[') return false;
-      } else if (c == ')') {
-        final l = stack.removeLast();
-        if (l != '(') return false;
-      } else if (c == '}') {
-        final l = stack.removeLast();
-        if (l != '{') return false;
+    for (final e in s.split('')) {
+      if (['(', '[', '{'].contains(e)) {
+        stack.add(e);
       } else {
-        return false;
+        if (stack.isEmpty) return false;
+        if ((e == ']' && stack.last == '[') ||
+            (e == ')' && stack.last == '(') ||
+            (e == '}' && stack.last == '{')) {
+          stack.removeLast();
+        } else {
+          return false;
+        }
       }
     }
     return stack.isEmpty;
