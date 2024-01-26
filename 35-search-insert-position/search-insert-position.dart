@@ -9,10 +9,10 @@ class Solution {
         return mid;
       } else if (nums[mid] > target) {
         high = mid - 1;
-      } else {
+      } else if (nums[mid] < target) {
         low = mid + 1;
       }
-      mid = (high - low) ~/ 2 + low;
+    mid = (high - low) ~/ 2 + low;
     }
 
     return low;
