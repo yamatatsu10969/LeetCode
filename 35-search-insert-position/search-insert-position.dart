@@ -1,6 +1,5 @@
 class Solution {
   int searchInsert(List<int> nums, int target) {
-    if (nums.isEmpty) return 0;
     int low = 0;
     int high = nums.length - 1;
 
